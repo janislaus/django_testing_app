@@ -7,6 +7,8 @@ packages =[{include = "django_testin_app"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+djangorestframework = "^3.12.4"
+black = "^21.6b0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
