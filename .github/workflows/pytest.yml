@@ -23,7 +23,15 @@ jobs:
         with:
           virtualenvs-create: true
           virtualenvs-in-project: true
-      
+      #----------------------------------------------
+      #  Set Environment variables      
+      #----------------------------------------------
+      - name: Install Poetry
+        run: |
+          export PYTHONPATH=$GITHUB_WORKSPACE/coronavstech/
+          export DJANGO_SETTINGS_MODULE="coronavstech.settings"
+          echo $PYTHONPATH
+          echo $DJANGO_SETTINGS_MODULE
       #----------------------------------------------
       # Install poetry dependencies
       #----------------------------------------------
@@ -34,6 +42,7 @@ jobs:
       #----------------------------------------------
       - name: Run tests
         run: |
-          export PYTHONPATH=$GITHUB_WORKSPACE/coronavstech/
+          echo $PYTHONPATH
+          echo $DJANGO_SETTINGS_MODULE       
           poetry run pytest tests/ -s -v --durations=0
           coverage report
