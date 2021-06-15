@@ -36,7 +36,7 @@ jobs:
         run: |
           env
           export PYTHONPATH=$GITHUB_WORKSPACE/coronavstech/
-          export DJANGO_SETTINGS_MODULE="django_testing_app.coronavstech.coronavstech.settings"
+          export DJANGO_SETTINGS_MODULE="coronavstech.settings"
           env
           poetry run pytest tests/ -s -v --durations=0
           coverage report
