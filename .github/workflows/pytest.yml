@@ -34,7 +34,9 @@ jobs:
       #----------------------------------------------
       - name: Run tests
         run: |
+          env
           export PYTHONPATH=$PYTHONPATH:$PYTHONPATH/django_testing_app/coronavstech/
           export DJANGO_SETTINGS_MODULE="django_testing_app.coronavstech.coronavstech.settings"
+          env
           poetry run pytest tests/ -s -v --durations=0
           coverage report
