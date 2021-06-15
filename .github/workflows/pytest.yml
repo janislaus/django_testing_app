@@ -24,6 +24,11 @@ jobs:
           virtualenvs-create: true
           virtualenvs-in-project: true
       #----------------------------------------------
+      # Install poetry dependencies
+      #----------------------------------------------
+      - name: Install dependencies
+        run: poetry install 
+      #----------------------------------------------
       #  Set Environment variables      
       #----------------------------------------------
       - name: Set Environment variables
@@ -32,11 +37,7 @@ jobs:
           export DJANGO_SETTINGS_MODULE="coronavstech.settings"
           echo $PYTHONPATH
           echo $DJANGO_SETTINGS_MODULE
-      #----------------------------------------------
-      # Install poetry dependencies
-      #----------------------------------------------
-      - name: Install dependencies
-        run: poetry install 
+     
       #----------------------------------------------
       #              run test suite   
       #----------------------------------------------
